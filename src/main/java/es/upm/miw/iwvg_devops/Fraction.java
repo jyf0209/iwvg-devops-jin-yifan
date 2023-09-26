@@ -1,4 +1,5 @@
 package es.upm.miw.iwvg_devops;
+
 /**
  * Conceptos: Las fracciones propias son aquellas cuyo numerador es menor que el denominador
  * <p>
@@ -54,6 +55,32 @@ public class Fraction {
 
     public double decimal() {
         return (double) numerator / denominator;
+    }
+
+    public boolean isProper() {
+        return numerator < denominator;
+    }
+
+    public boolean isImproper() {
+        return numerator > denominator;
+    }
+
+    public boolean isEquivalent(Fraction other) {
+        return numerator * other.denominator == denominator * other.numerator;
+    }
+
+    public Fraction add(Fraction other) {
+        int newNumerator = (numerator * other.denominator) + (denominator * other.numerator);
+        int newDenominator = denominator * other.denominator;
+        return new Fraction(newNumerator, newDenominator);
+    }
+
+    public Fraction multiply(Fraction other) {
+        return new Fraction(numerator * other.numerator, denominator * other.denominator);
+    }
+
+    public Fraction divide(Fraction other) {
+        return new Fraction(numerator*other.denominator, denominator*other.numerator);
     }
 
     @Override
