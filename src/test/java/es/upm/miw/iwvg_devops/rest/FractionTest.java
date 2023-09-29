@@ -9,26 +9,31 @@ import static org.junit.jupiter.api.Assertions.*;
 public class FractionTest {
     private Fraction fraction;
     @BeforeEach
-    public void SetUp(){
+    void SetUp(){
         fraction = new Fraction(2,4);
     }
     @Test
-    public void testGetNumerator(){
+    void testCreateFraction()
+    {
+        Fraction fraction = new Fraction();
+    }
+    @Test
+    void testGetNumerator(){
         assertEquals(2, fraction.getNumerator());
     }
     @Test
-    public void testSetNumerator(){
+    void testSetNumerator(){
         fraction.setNumerator(4);
         assertEquals(4, fraction.getNumerator());
     }
 
     @Test
-    public void testGetDenominator(){
+    void testGetDenominator(){
         assertEquals(4,fraction.getDenominator());
     }
 
     @Test
-    public void testSetDenominator(){
+    void testSetDenominator(){
         fraction.setDenominator(8);
         assertEquals(8, fraction.getDenominator());
     }
