@@ -35,4 +35,5 @@ public class Searches{
                 )
                 .reduce(new Fraction(0, 1), Fraction::add);
     }
+
 }
